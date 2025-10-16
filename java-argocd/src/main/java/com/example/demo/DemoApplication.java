@@ -15,7 +15,7 @@ public class DemoApplication {
 
     @GetMapping("/")
     public String home() {
-        return "<h1>Welcome to My CICD Java App using Argocd by Maheshpasupuleti!</h1>";
+        return "<h1>Welcome to My Dockerized Java App by Maheshpasupuleti!</h1>";
     }
 }
 
