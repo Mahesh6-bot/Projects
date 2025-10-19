@@ -1,21 +1,21 @@
 package com.example.demo;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootTest
-class DemoApplicationTests {
+@SpringBootApplication
+@RestController
+public class DemoApplication {
 
-    @Test
-    void contextLoads() {
-        // This verifies Spring context starts correctly
-        assertTrue(true, "Application context loaded successfully");
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
     }
 
-    @Test
-    void homeEndpointTest() {
-        // Dummy test just to ensure at least one report is created
-        assertTrue("Welcome to My Dockerized Java App by Maheshpasupuleti!".contains("Maheshpasupuleti"));
+    @GetMapping("/")
+    public String home() {
+        return "<h1>Welcome to My Dockerized Java App by Maheshpasupuleti!</h1>";
     }
 }
+
